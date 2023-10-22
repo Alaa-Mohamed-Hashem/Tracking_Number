@@ -2,7 +2,6 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "./ShippingDetails.css";
 
 import askImg from "../../assets/imgs/services-image.png";
 

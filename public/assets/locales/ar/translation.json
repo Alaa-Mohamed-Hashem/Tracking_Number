@@ -5,6 +5,7 @@
   "pirces": "الأسعار",
   "callsSalers": "كلم المبيعات",
   "signin": "تسجيل الدخول",
+  "DELIVERED": "تم تسليم الشحنة",
   "shippingTracking": "تتبع شحنتك",
   "TrackYourShipment": "تتبع شحنتك",
   "shippingNumber": "رقم التتبع",
@@ -22,5 +23,8 @@
   "LastUdpate": "اخر ظهور",
   "Merchant": "اسم التاجر",
   "PromisedDate": "موعد التسليم خلال",
-  "cancelled": "تم الغاء الشحنة من التاجر"
+  "cancelled": "تم الغاء الشحنة من التاجر",
+  "cancelled1": "تم الغاء الشحنة",
+  "DELIVERED_TO_SENDER": "لم يتم تسليم الشحنة",
+  "DELIVERED_TO_SENDER_Failed": "العميل غير متواجد في العنوان"
 }

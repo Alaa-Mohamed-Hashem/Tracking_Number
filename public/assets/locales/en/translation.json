@@ -5,6 +5,7 @@
   "pirces": "Pirces",
   "callsSalers": "Contact Sales",
   "signin": "Sign In",
+  "DELIVERED": "Delivered",
   "shippingTracking": "Track Shipment",
   "TrackYourShipment": "Track your shipment",
   "shippingNumber": "Tracking No.",
@@ -22,5 +23,8 @@
   "LastUdpate": "Last udpate",
   "Merchant": "Merchant",
   "PromisedDate": "Promised Date",
-  "cancelled": "this shipping is cancelled"
+  "cancelled1": "cancelled",
+  "cancelled": "this shipping is cancelled",
+  "DELIVERED_TO_SENDER": "DELIVERED_TO_SENDER",
+  "DELIVERED_TO_SENDER_Failed": "The client is not at home"
 }

@@ -29,6 +29,9 @@ const Stepper = () => {
     if (shipping.CurrentStatus.state === "CANCELLED") {
       setCurrentStep(3);
     }
+    if (shipping.CurrentStatus.state === "DELIVERED_TO_SENDER") {
+      setCurrentStep(3);
+    }
   }, []);
 
   return (
@@ -38,6 +41,10 @@ const Stepper = () => {
           shipping.CurrentStatus.state === "DELIVERED" && "DELIVERED"
         }
         ${shipping.CurrentStatus.state === "CANCELLED" && "CANCELLED"}
+        ${
+          shipping.CurrentStatus.state === "DELIVERED_TO_SENDER" &&
+          "DELIVERED_TO_SENDER"
+        }
         flex justify-between w-full text-center`}
       >
         {steps?.map((step, i) => (
@@ -61,6 +68,12 @@ const Stepper = () => {
               shipping.CurrentStatus.state === "CANCELLED" && (
                 <span className="text-red-600 text-xs md:block xs:hidden absolute top-100">
                   {t("cancelled")}
+                </span>
+              )}
+            {i + 1 === currentStep &&
+              shipping.CurrentStatus.state === "DELIVERED_TO_SENDER" && (
+                <span className="text-yellow-500 text-xs md:block xs:hidden absolute top-100">
+                  {t("DELIVERED_TO_SENDER_Failed")}
                 </span>
               )}
           </div>

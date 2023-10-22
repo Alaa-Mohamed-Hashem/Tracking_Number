@@ -2,22 +2,29 @@ import React from "react";
 import { useShipping } from "../../context/ShippingContext";
 import Stepper from "../Stepper/Stepper";
 import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 const formatDate = (date) =>
-  new Intl.DateTimeFormat("en", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    weekday: "long",
-    hour: "numeric",
-  }).format(new Date(date));
+  new Intl.DateTimeFormat(
+    `${i18next.language === "en" ? "en" : "ar-EG-u-nu-latn"}`,
+    {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      weekday: "long",
+      hour: "numeric",
+    }
+  ).format(new Date(date));
 
 const formatDate2 = (date) =>
-  new Intl.DateTimeFormat("en", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(date));
+  new Intl.DateTimeFormat(
+    `${i18next.language === "en" ? "en" : "ar-EG-u-nu-latn"}`,
+    {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    }
+  ).format(new Date(date));
 
 const ShippingStatus = () => {
   const { shipping, error, isLoading } = useShipping();
@@ -39,12 +46,22 @@ const ShippingStatus = () => {
               </span>
               <p
                 className={`mb-0 ${
-                  shipping.CurrentStatus.state === "DELIVERED_TO_SENDER"
-                    ? "text-green-500"
-                    : ""
-                }`}
+                  shipping.CurrentStatus.state === "DELIVERED" &&
+                  "text-green-500"
+                } ${
+                  shipping.CurrentStatus.state === "CANCELLED" && "text-red-500"
+                }
+                ${
+                  shipping.CurrentStatus.state === "DELIVERED_TO_SENDER" &&
+                  "text-yellow-500"
+                }
+                `}
               >
-                {shipping.CurrentStatus.state}
+                {shipping.CurrentStatus.state === "DELIVERED" && t("DELIVERED")}
+                {shipping.CurrentStatus.state === "CANCELLED" &&
+                  t("cancelled1")}
+                {shipping.CurrentStatus.state === "DELIVERED_TO_SENDER" &&
+                  t("DELIVERED_TO_SENDER")}
               </p>
             </li>
             <li className="text-md md:mb-0 xs:mb-4">

@@ -66,3 +66,17 @@
     height: 15px;
   }
 }
+
+@media (min-width: 1024px) and (max-width: 1449px) {
+  .arabicStyle:not(:first-child):before,
+  .step-item:not(:first-child):before {
+    @apply lg:w-80;
+  }
+}
+@media (min-width: 768px) and (max-width: 1224px) {
+  .arabicStyle:not(:first-child):before,
+  .step-item:not(:first-child):before {
+    /* @apply md:w-400; */
+    width: 243px;
+  }
+}

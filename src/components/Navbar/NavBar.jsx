@@ -78,8 +78,8 @@ const NavBar = () => {
           </Nav>
           <Nav
             className={`${
-              i18next.language === "en" ? "md:ml-auto" : "md:mr-auto"
-            } d-flex justify-evenly md:w-96`}
+              i18next.language === "en" ? "lg:ml-auto" : "lg:mr-auto"
+            } d-flex justify-evenly lg:w-96`}
           >
             {!isMobile && <TrackingBtn />}
             <button className="xs:border-1 xs:p-3 xs:rounded-full lg:rounded-none lg:p-0 lg:border-0 xs:border-purple-400 xs:mb-5 lg:mb-0">

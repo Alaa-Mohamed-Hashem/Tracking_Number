@@ -37,7 +37,6 @@ const ShippingDetails = () => {
       title: `${t("branch")}`,
       dataIndex: "branch",
       key: "branch",
-      render: (text) => <a>{text}</a>,
     },
     {
       title: `${t("date")}`,
@@ -56,7 +55,7 @@ const ShippingDetails = () => {
     },
   ];
 
-  const intoEnglish = {
+  const transitEventsLanguage = {
     TICKET_CREATED: { en: "The shipment is created", ar: "تم انشاء الشحنة" },
     PACKAGE_RECEIVED: { en: "Package received", ar: "تم استلام الشحنة" },
     IN_TRANSIT: { en: "In Transit", ar: "الشحنة خرجت للتسليم" },
@@ -88,26 +87,26 @@ const ShippingDetails = () => {
     key: Math.random() * 3,
     branch: ship.hub
       ? i18next.language === "ar"
-        ? intoEnglish[ship?.hub]?.ar
-        : intoEnglish[ship?.hub]?.en
+        ? transitEventsLanguage[ship?.hub]?.ar
+        : transitEventsLanguage[ship?.hub]?.en
       : "------",
     date: formatDate2(ship?.timestamp),
     time: formatDate(ship?.timestamp),
     details:
       i18next.language === "ar"
-        ? intoEnglish[ship?.state]?.ar
-        : intoEnglish[ship?.state]?.en,
+        ? transitEventsLanguage[ship?.state]?.ar
+        : transitEventsLanguage[ship?.state]?.en,
   }));
 
   return (
     <div className="my-12">
       <Container>
-        <Row className="flex md:flex-row xs:flex-col-reverse">
+        <Row className="flex lg:flex-row xs:flex-col-reverse">
           <Col lg={4}>
             <div>
               <h5> {t("DeliveryAddress")} </h5>
               <div className="p-4 bg-zinc-50 rounded-lg mb-2">
-                <p className="text-md text-slate-600 mb-0">{t("Address")}</p>
+                <p className="text-lg text-slate-600 mb-0">{t("Address")}</p>
               </div>
               <div className="p-4 border-1 rounded-lg flex flex-row justify-between">
                 <div>
@@ -126,7 +125,7 @@ const ShippingDetails = () => {
             <div className="lg:mt-0 xs:mt-10">
               <h5>{t("ShippingDetails")}</h5>
               <Table
-                className="lg:border-1 xs:border-0 md:overflow-visible xs:overflow-scroll"
+                className="lg:border-1 xs:border-0 lg:overflow-visible xs:overflow-scroll"
                 columns={columns}
                 dataSource={data}
               />

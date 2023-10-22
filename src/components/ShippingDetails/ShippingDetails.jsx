@@ -85,7 +85,7 @@ const ShippingDetails = () => {
     },
   };
 
-  const data1 = shipping?.TransitEvents?.map((ship) => ({
+  const data = shipping?.TransitEvents?.map((ship) => ({
     key: Math.random() * 3,
     branch: ship.hub
       ? i18next.language === "ar"
@@ -103,7 +103,7 @@ const ShippingDetails = () => {
   return (
     <div className="my-12">
       <Container>
-        <Row>
+        <Row className="flex md:flex-row xs:flex-col-reverse">
           <Col lg={4}>
             <div>
               <h5> {t("DeliveryAddress")} </h5>
@@ -129,7 +129,7 @@ const ShippingDetails = () => {
               <Table
                 className="lg:border-1 xs:border-0 md:overflow-visible xs:overflow-scroll"
                 columns={columns}
-                dataSource={data1}
+                dataSource={data}
               />
             </div>
           </Col>

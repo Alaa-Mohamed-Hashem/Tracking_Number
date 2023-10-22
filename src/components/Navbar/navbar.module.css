@@ -1,0 +1,71 @@
+.navbar {
+  padding: 15px 80px !important;
+  display: flex;
+  align-items: center;
+}
+
+.trackShadow {
+  -webkit-box-shadow: 0px -12px 40px 1px rgba(230, 230, 230, 1);
+  -moz-box-shadow: 0px -12px 40px 1px rgba(230, 230, 230, 1);
+  box-shadow: 0px -12px 40px 1px rgba(230, 230, 230, 1);
+  border-radius: 10px 10px 0 0;
+  transition: 0.3s;
+}
+
+.trackShadowHidden {
+  opacity: 0;
+  height: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+.trackShadowVisible {
+  opacity: 1;
+  transition: 0.2s ease-in;
+  height: auto !important;
+  padding: 30px 45px !important;
+  overflow: visible !important;
+}
+
+.nav a {
+  margin: 0px 20px;
+}
+
+.nav a:last-child {
+  display: none;
+}
+
+.nav a:hover,
+.nav button:hover {
+  color: #e30613;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    padding: 10px 15px !important;
+  }
+
+  .navbarToggle {
+    border: none !important;
+    /* padding: 4px 9px !important; */
+  }
+
+  .navbarToggle:focus {
+    box-shadow: none !important;
+  }
+
+  .nav {
+    padding: 20px 15px;
+  }
+
+  .nav a {
+    border-bottom: 1px dashed #959595;
+    margin: 0px 0px;
+    margin-bottom: 20px;
+    padding: 13px 0px;
+  }
+
+  .nav a:last-child {
+    display: block;
+  }
+}

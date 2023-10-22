@@ -1,0 +1,55 @@
+.step-item {
+  @apply relative flex flex-col justify-center items-center lg:w-36 xs:w-11;
+}
+.step-item:not(:first-child):before {
+  @apply content-[''] bg-slate-200 absolute h-[3px] xs:right-3/4 lg:right-2/4 top-1/3 -translate-y-2/4 lg:w-96 xs:w-16;
+}
+.arabicStyle {
+  @apply relative flex flex-col justify-center items-center lg:w-36 xs:w-11;
+}
+.arabicStyle:not(:first-child):before {
+  @apply content-[''] bg-slate-200 absolute h-[3px] xs:left-3/4 lg:left-2/4 top-1/3 -translate-y-2/4 lg:w-96 xs:w-16;
+}
+.step {
+  @apply lg:w-10 lg:h-10 xs:h-7 xs:w-7 flex items-center justify-center z-10 relative bg-slate-700 rounded-full font-semibold text-white;
+}
+.active .step {
+  @apply bg-sky-600;
+}
+.complete .step {
+  @apply bg-green-600;
+}
+.complete:not(:first-child):before,
+.active:not(:first-child):before {
+  @apply bg-green-600;
+}
+
+.DELIVERED .complete:not(:first-child):before,
+.DELIVERED .active:not(:first-child):before {
+  @apply bg-green-600;
+}
+
+.DELIVERED .complete .step {
+  @apply bg-green-600;
+}
+
+.CANCELLED .complete:not(:first-child):before,
+.CANCELLED .active:not(:first-child):before {
+  @apply bg-red-600;
+}
+
+.CANCELLED .complete .step {
+  @apply bg-red-600;
+}
+
+.CANCELLED .active .step {
+  @apply bg-red-600;
+}
+
+@media screen and (max-width: 600px) {
+  .stepPragraph {
+    width: 68px;
+    font-size: 10px;
+    height: 15px;
+  }
+}

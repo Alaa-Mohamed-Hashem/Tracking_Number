@@ -1,0 +1,28 @@
+.trackShadow {
+  -webkit-box-shadow: 0px -12px 40px 1px rgba(230, 230, 230, 1);
+  -moz-box-shadow: 0px -12px 40px 1px rgba(230, 230, 230, 1);
+  box-shadow: 0px -12px 40px 1px rgba(230, 230, 230, 1);
+  border-radius: 10px 10px 0 0;
+  transition: 0.3s;
+}
+
+.trackShadowHidden {
+  opacity: 0;
+  height: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+.trackShadowVisible {
+  opacity: 1;
+  transition: 0.2s ease-in;
+  height: auto !important;
+  padding: 30px 45px !important;
+  overflow: visible !important;
+}
+
+@media screen and (max-width: 600px) {
+  .trackShadowVisible {
+    padding: 20px 25px !important;
+  }
+}

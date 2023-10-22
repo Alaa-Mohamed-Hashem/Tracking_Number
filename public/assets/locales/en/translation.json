@@ -26,5 +26,6 @@
   "cancelled1": "cancelled",
   "cancelled": "this shipping is cancelled",
   "DELIVERED_TO_SENDER": "DELIVERED_TO_SENDER",
-  "DELIVERED_TO_SENDER_Failed": "The client is not at home"
+  "DELIVERED_TO_SENDER_Failed": "The client is not at home",
+  "SOUQ.COM": "SOUQ.COM"
 }

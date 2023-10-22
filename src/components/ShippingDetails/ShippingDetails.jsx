@@ -57,45 +57,47 @@ const ShippingDetails = () => {
     },
   ];
 
-  const intoArabic = {
-    TICKET_CREATED: "تم انشاء الشحنة",
-    PACKAGE_RECEIVED: "تم استلام الشحنة",
-    IN_TRANSIT: "الشحنة خرجت للتسليم",
-    NOT_YET_SHIPPED: "لم تصل بعد",
-    OUT_FOR_DELIVERY: "خرجت للتوصيل",
-    WAITING_FOR_CUSTOMER_ACTION: "انتظار رد العميل",
-    "Cairo Sorting Facility": "منشأة الفرز بالقاهرة",
-    "Haram Hub": "الهرم",
-    "FM & Reverse Hub": "اف ام",
-    "Tanta Hub": "طنطا",
-  };
-
   const intoEnglish = {
-    TICKET_CREATED: "The shipment is created",
-    PACKAGE_RECEIVED: "Package received",
-    IN_TRANSIT: "In Transit",
-    NOT_YET_SHIPPED: "Not Yet Shipped",
-    OUT_FOR_DELIVERY: "Out For Delivery",
-    WAITING_FOR_CUSTOMER_ACTION: "Waiting For Customer Action",
-    "Cairo Sorting Facility": "Cairo Sorting Facility",
-    "Haram Hub": "Haram",
-    "FM & Reverse Hub": "FM",
-    "Tanta Hub": "Tanta",
+    TICKET_CREATED: { en: "The shipment is created", ar: "تم انشاء الشحنة" },
+    PACKAGE_RECEIVED: { en: "Package received", ar: "تم استلام الشحنة" },
+    IN_TRANSIT: { en: "In Transit", ar: "الشحنة خرجت للتسليم" },
+    NOT_YET_SHIPPED: { en: "Not Yet Shipped", ar: "لم تصل بعد" },
+    OUT_FOR_DELIVERY: { en: "Out For Delivery", ar: "خرجت للتوصيل" },
+    WAITING_FOR_CUSTOMER_ACTION: {
+      en: "Waiting For Customer Action",
+      ar: "انتظار رد العميل",
+    },
+    "Cairo Sorting Facility": {
+      en: "Cairo Sorting Facility",
+      ar: "منشأة الفرز بالقاهرة",
+    },
+    "Haram Hub": {
+      en: "Haram",
+      ar: "الهرم",
+    },
+    "FM & Reverse Hub": {
+      en: "FM",
+      ar: "أف أم",
+    },
+    "Tanta Hub": {
+      en: "Tanta",
+      ar: "طنطا",
+    },
   };
 
   const data1 = shipping?.TransitEvents?.map((ship) => ({
     key: Math.random() * 3,
     branch: ship.hub
       ? i18next.language === "ar"
-        ? intoArabic[ship?.hub]
-        : intoEnglish[ship?.hub]
+        ? intoEnglish[ship?.hub]?.ar
+        : intoEnglish[ship?.hub]?.en
       : "------",
     date: formatDate2(ship?.timestamp),
     time: formatDate(ship?.timestamp),
     details:
       i18next.language === "ar"
-        ? intoArabic[ship?.state]
-        : intoEnglish[ship?.state],
+        ? intoEnglish[ship?.state]?.ar
+        : intoEnglish[ship?.state]?.en,
   }));
 
   return (

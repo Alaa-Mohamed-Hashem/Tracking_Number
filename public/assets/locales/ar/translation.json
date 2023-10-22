@@ -26,5 +26,6 @@
   "cancelled": "تم الغاء الشحنة من التاجر",
   "cancelled1": "تم الغاء الشحنة",
   "DELIVERED_TO_SENDER": "لم يتم تسليم الشحنة",
-  "DELIVERED_TO_SENDER_Failed": "العميل غير متواجد في العنوان"
+  "DELIVERED_TO_SENDER_Failed": "العميل غير متواجد",
+  "SOUQ.COM": "سوق.كوم"
 }

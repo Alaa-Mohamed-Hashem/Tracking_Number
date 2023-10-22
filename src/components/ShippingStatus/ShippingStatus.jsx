@@ -72,7 +72,7 @@ const ShippingStatus = () => {
             </li>
             <li className="text-md md:mb-0 xs:mb-4">
               <span className="opacity-60">{t("Merchant")}</span>
-              <p className="mb-0">SOUQ.COM</p>
+              <p className="mb-0">{t("SOUQ.COM")}</p>
             </li>
             <li className="text-md md:mb-0 xs:mb-4">
               <span className="opacity-60">{t("PromisedDate")}</span>
